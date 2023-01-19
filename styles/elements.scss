@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background-color: $color-bg-secondary;
+    width: 100vw;
+    height: 100vh;
+    color: $color-font-secondary;
+    font-size: $font-size-md;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: $color-bg-primary;
+    box-shadow: $box-shadow-secondary;
+    color: $color-font-primary;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input::-moz-placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder {
+    color: #999;
+}
+
+input::-webkit-input-placeholder {
+    color: #999;
+}

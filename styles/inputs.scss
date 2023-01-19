@@ -1,0 +1,45 @@
+.input {
+    min-width: 200px;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    outline: none;
+    font-size: $font-size-md;
+    border: unset;
+    box-shadow: $box-shadow-primary-light;
+    transition: all $transition-default;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-primary;
+    }
+}
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 240px;
+    padding: 10px 20px;
+    color: $color-placeholder;
+    border-radius: $border-radius;
+    outline: none;
+    font-size: $font-size-md;
+    border: unset;
+    box-shadow: $box-shadow-primary-light;
+}
+
+.button {
+    background-color: $color-bg-primary;
+    padding: 10px 20px;
+    color: $color-font-primary;
+    font-size: $font-size-md;
+    font-weight: bold;
+    border: unset;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-primary-light;
+    transition: box-shadow $transition-default;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: $box-shadow-primary;
+    }
+}

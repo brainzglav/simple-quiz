@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <title>Simple Quiz</title>
+  </head>
+  <body>
+    <main>
+      <header class="flex flex-center">
+        <h1>Simple Quiz</h1>
+      </header>
+      <form id="login-form" class="login-form" action="">
+        <div class="flex flex-column">
+          <label for="name"> Ime </label>
+          <input
+            class="input"
+            name="name"
+            type="text"
+            placeholder="Name"
+            autocomplete="off"
+          />
+        </div>
+        <div class="flex flex-column">
+          <label for="surname"> Prezime </label>
+          <input
+            class="input"
+            name="surname"
+            type="text"
+            placeholder="Surname"
+          />
+        </div>
+        <div class="flex flex-column">
+          <label for="surname"> Spol </label>
+          <select class="select" name="sex" type="text" placeholder="Sex">
+            <option value="male">Muskarac</option>
+            <option value="female">Zena</option>
+          </select>
+        </div>
+        <div class="flex flex-column">
+          <label for="code"> Sigurnosni kod </label>
+          <input class="input" name="code" type="password" placeholder="Code" />
+        </div>
+        <button class="button">Kreni</button>
+      </form>
+    </main>
+  </body>
+</html>
