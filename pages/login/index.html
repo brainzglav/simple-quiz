@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../../style.css" />
     <title>Simple Quiz</title>
+    <script defer src="./index.js" type="module"></script>
   </head>
   <body>
     <main>
       <header class="flex flex-center">
         <h1>Simple Quiz</h1>
       </header>
-      <form id="login-form" class="login-form" action="">
+      <form id="login-form" class="login-form">
         <div class="flex flex-column">
           <label for="name"> Ime </label>
           <input
@@ -31,6 +32,7 @@
             name="surname"
             type="text"
             placeholder="Surname"
+            autocomplete="off"
           />
         </div>
         <div class="flex flex-column">
@@ -44,7 +46,7 @@
           <label for="code"> Sigurnosni kod </label>
           <input class="input" name="code" type="password" placeholder="Code" />
         </div>
-        <button class="button">Kreni</button>
+        <button class="button" type="submit">Kreni</button>
       </form>
     </main>
   </body>
