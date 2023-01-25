@@ -1,0 +1,11 @@
+.error-field {
+    //visibility: hidden;
+    padding: 10px 0;
+    height: 24px;
+    color: $color-danger;
+    font-weight: bold;
+
+    &--visible {
+        visibility: unset;
+    }
+}

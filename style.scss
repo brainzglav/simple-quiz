@@ -1,10 +1,14 @@
 /* Configs */
 @import "./styles/config.scss";
 @import "./styles/variables.scss";
-@import "./styles/flex.scss";
 
 /* Elements */
 @import "./styles/elements.scss";
 
 /* Components */
 @import "./styles/inputs.scss";
+@import "./styles/forms.scss";
+
+/* Utility */
+@import "./styles/spacing.scss";
+@import "./styles/flex.scss";

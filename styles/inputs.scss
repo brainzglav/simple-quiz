@@ -12,6 +12,10 @@
     &:focus {
         box-shadow: $box-shadow-primary;
     }
+
+    &.invalid {
+        border: 1px solid $color-danger;
+    }
 }
 
 .select {
@@ -25,6 +29,10 @@
     font-size: $font-size-md;
     border: unset;
     box-shadow: $box-shadow-primary-light;
+
+    &.invalid {
+        border: 1px solid $color-danger;
+    }
 }
 
 .button {
