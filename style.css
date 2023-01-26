@@ -43,7 +43,11 @@ header {
 
 label {
   font-weight: bold;
-  margin-bottom: 10px;
+}
+
+input[type=radio] {
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 input::-moz-placeholder {
@@ -120,8 +124,20 @@ input::-webkit-input-placeholder {
 }
 
 /* Utility */
+.m-b-10 {
+  margin-bottom: 20px;
+}
+
 .m-b-20 {
   margin-bottom: 20px;
+}
+
+.m-b-50 {
+  margin-bottom: 50px;
+}
+
+.w-500px {
+  width: 500px;
 }
 
 .flex {

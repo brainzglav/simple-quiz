@@ -1,52 +1,5 @@
-import { getValues, getEntries, redirect } from "../../js/forms.js";
-import { LOGGED_IN_KEY } from "../../js/constants.js";
-
-const formValidators = {
-  name: {
-    required: true,
-    maxLength: 12,
-  },
-  surname: {
-    required: true,
-    maxLength: 14,
-  },
-  sex: {
-    required: true,
-  },
-  code: {
-    required: true,
-    match: "1234",
-  },
-};
-
-function validate(value, validators) {
-  for (const key in validators) {
-    const validatorValue = validators[key];
-
-    switch (key) {
-      case "required":
-        if (
-          validatorValue &&
-          (value === "" || value === null || value === undefined)
-        ) {
-          return "Obavezno polje";
-        }
-        break;
-      case "maxLength":
-        if (value.length > validatorValue) {
-          return `Maksimalna duljina je ${validatorValue}`;
-        }
-        break;
-      case "match":
-        if (value !== validatorValue) {
-          return "Pogresan unos";
-        }
-        break;
-    }
-  }
-
-  return "";
-}
+import { getValues, redirect, validate } from "../../js/forms.js";
+import { SECURITY_CODE, USER_LOGIN_INFO_KEY } from "../../js/constants.js";
 
 function validateElement(elementName) {
   const element = document.getElementsByName(elementName)[0];
@@ -65,21 +18,39 @@ function validateElement(elementName) {
 function loginHandler(event) {
   event.preventDefault();
 
-  //const values = getValues(event.target);
-  const entries = getEntries(event.target);
+  Object.keys(formValidators).forEach(validateElement);
 
-  console.log({ event, loginForm, entries });
+  const hasErrors = !!document.getElementsByClassName("invalid").length;
 
-  for (const [key, _value] of entries) {
-    validateElement(key);
+  if (!hasErrors) {
+    const formData = getValues(event.target);
+
+    localStorage.setItem(USER_LOGIN_INFO_KEY, JSON.stringify(formData));
+    redirect("/pages/question1/index.html");
   }
-
-  /* 
-  localStorage.setItem(LOGGED_IN_KEY, true);
-
-  redirect("/pages/question1/index.html"); 
-  */
 }
+
+/* Initialize validators */
+
+const formValidators = {
+  name: {
+    required: true,
+    maxLength: 12,
+  },
+  surname: {
+    required: true,
+    maxLength: 14,
+  },
+  sex: {
+    required: true,
+  },
+  code: {
+    required: true,
+    match: SECURITY_CODE,
+    /* This is called a magic number, avoid doing this */
+    // match: "1234",
+  },
+};
 
 const loginForm = document.getElementById("login-form");
 

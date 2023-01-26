@@ -22,7 +22,11 @@ header {
 
 label {
     font-weight: bold;
-    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 input::-moz-placeholder {

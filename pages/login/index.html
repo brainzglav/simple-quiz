@@ -16,7 +16,7 @@
       </header>
       <form id="login-form" class="login-form">
         <div class="flex flex-column">
-          <label for="name"> Ime </label>
+          <label class="m-b-10" for="name"> Ime </label>
           <input
             class="input"
             name="name"
@@ -27,7 +27,7 @@
           <div class="error-field"></div>
         </div>
         <div class="flex flex-column">
-          <label for="surname"> Prezime </label>
+          <label class="m-b-10" for="surname"> Prezime </label>
           <input
             class="input"
             name="surname"
@@ -38,15 +38,16 @@
           <div class="error-field"></div>
         </div>
         <div class="flex flex-column">
-          <label for="surname"> Spol </label>
+          <label class="m-b-10" for="surname"> Spol </label>
           <select class="select" name="sex" type="text" placeholder="Spol">
+            <option value="" selected disabled hidden>Oznaci spol</option>
             <option value="male">Muskarac</option>
             <option value="female">Zena</option>
           </select>
           <div class="error-field"></div>
         </div>
         <div class="flex flex-column m-b-20">
-          <label for="code"> Sigurnosni kod </label>
+          <label class="m-b-10" for="code"> Sigurnosni kod </label>
           <input
             class="input"
             name="code"

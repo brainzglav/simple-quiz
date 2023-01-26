@@ -12,13 +12,10 @@ function questionHandler(event) {
     return;
   }
 
-  localStorage.setItem(ANSWERS_KEY, [answer]);
+  const answers = localStorage.getItem(ANSWERS_KEY);
+  localStorage.setItem(ANSWERS_KEY);
   redirect("/pages/question2/index.html");
 }
-
-const userInfo = localStorage.getItem(USER_LOGIN_INFO_KEY);
-
-console.log({ userInfo: JSON.parse(userInfo) });
 
 const questionForm = document.getElementById("question-form");
 

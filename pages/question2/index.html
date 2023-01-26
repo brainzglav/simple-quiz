@@ -15,32 +15,30 @@
       </header>
       <section class="flex flex-items-center flex-column">
         <form id="question-form" class="flex flex-column w-500px">
-          <h1>1. pitanje</h1>
-          <p>Hoisting je:</p>
+          <h1>2. pitanje</h1>
+          <p>Closure je princip po kojem:</p>
           <div class="flex m-b-10">
             <input id="answer-1" type="radio" name="answer" value="1" />
             <label for="answer-1">
-              Princip po kojem varijable isplivaju na pocetak filea
+              Child funkcija sprema referencu na svoju parent funkciju
             </label>
           </div>
           <div class="flex m-b-10">
             <input id="answer-2" type="radio" name="answer" value="2" />
             <label for="answer-2">
-              Princip po kojem funkcije isplivaju na pocetak filea
+              Parent funkcija sprema referencu na svoju child funkciju
             </label>
           </div>
           <div class="flex m-b-10">
             <input id="answer-3" type="radio" name="answer" value="3" />
             <label for="answer-3">
-              Princip po kojem se deklaracije varijabli ucitavaju prve u
-              memoriju
+              Parent funkcija sprema referencu na scope svoje child funkcije
             </label>
           </div>
           <div class="flex m-b-50">
             <input id="answer-4" type="radio" name="answer" value="4" />
             <label for="answer-4">
-              Princip po kojem se deklaracije varijabli i funkcija ucitavaju
-              prve u memoriju
+              Child funkcija sprema referencu na scope svoje parent funkcije
             </label>
           </div>
           <button class="button" type="submit">Sljedece pitanje</button>
