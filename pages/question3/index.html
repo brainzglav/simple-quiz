@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <title>Questions</title>
+    <script defer src="./index.js" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <header class="flex flex-center">
+        <h1>Simple Quiz</h1>
+      </header>
+      <section class="flex flex-items-center flex-column">
+        <form id="question-form" class="flex flex-column w-500px">
+          <h1>3. pitanje</h1>
+          <p>Function scope je:</p>
+          <div class="flex m-b-10">
+            <input id="answer-1" type="radio" name="answer" value="1" />
+            <label for="answer-1">
+              Memorijski prostor dodijeljen varijabli
+            </label>
+          </div>
+          <div class="flex m-b-10">
+            <input id="answer-2" type="radio" name="answer" value="2" />
+            <label for="answer-2">
+              Memorijski prostor dodijeljen funkciji
+            </label>
+          </div>
+          <div class="flex m-b-10">
+            <input id="answer-3" type="radio" name="answer" value="3" />
+            <label for="answer-3">
+              Memorijski prostor dodijeljen programu
+            </label>
+          </div>
+          <div class="flex m-b-50">
+            <input id="answer-4" type="radio" name="answer" value="4" />
+            <label for="answer-4">
+              Memorijski prostor dodijeljen varijabli i funkciji
+            </label>
+          </div>
+          <button class="button" type="submit">Sljedece pitanje</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

@@ -26,7 +26,7 @@ function loginHandler(event) {
     const formData = getValues(event.target);
 
     localStorage.setItem(USER_LOGIN_INFO_KEY, JSON.stringify(formData));
-    redirect("/pages/question1/index.html");
+    redirect("/pages/questions/index.html");
   }
 }
 
