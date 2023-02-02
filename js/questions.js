@@ -34,6 +34,17 @@ export const questions = [
     ],
     correctAnswer: 2,
   },
+  {
+    id: 3,
+    question: "Coercion je:",
+    answers: [
+      "Eksplicitna pretvordba tipova od strane JS enginea",
+      "Eksplicitna pretvordba tipova od strane usera",
+      "Implicitna pretvordba tipova od strane JS enginea",
+      "Eksplicitna pretvordba tipova od strane usera",
+    ],
+    correctAnswer: 3,
+  },
 ];
 
 export const correctAnswers = questions.map(
@@ -43,7 +54,10 @@ export const correctAnswers = questions.map(
 export function getStoredAnswers() {
   const existingAnswers = localStorage.getItem(ANSWERS_KEY) || "";
 
-  return existingAnswers.split(",").filter(Boolean);
+  return existingAnswers
+    .split(",")
+    .filter(Boolean)
+    .map((item) => +item);
 }
 
 export function createElement(html) {

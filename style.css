@@ -136,6 +136,10 @@ input::-webkit-input-placeholder {
   margin-bottom: 50px;
 }
 
+.m-r-20 {
+  margin-right: 20px;
+}
+
 .w-500px {
   width: 500px;
 }

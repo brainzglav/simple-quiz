@@ -1,5 +1,6 @@
-import { ANSWERS_KEY, USER_LOGIN_INFO_KEY } from "../../js/constants.js";
+import { ANSWERS_KEY } from "../../js/constants.js";
 import { getValues, redirect } from "../../js/forms.js";
+import { loginGuard } from "../../js/guards.js";
 import {
   questions,
   getStoredAnswers,
@@ -65,13 +66,7 @@ function questionHandler(event) {
 }
 
 function guard() {
-  const data = localStorage.getItem(USER_LOGIN_INFO_KEY);
-
-  if (!data) {
-    redirect("/pages/login/index.html");
-
-    return;
-  }
+  loginGuard();
 
   const answers = getStoredAnswers();
 
