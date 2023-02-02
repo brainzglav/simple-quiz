@@ -1,14 +1,10 @@
-import { ANSWERS_KEY } from "../../js/constants.js";
-import { getValues } from "../../js/forms.js";
-import { questions } from "../../js/questions.js";
-
-function createElement(html) {
-  const template = document.createElement("template");
-
-  template.innerHTML = html;
-
-  return template.content.cloneNode(true);
-}
+import { ANSWERS_KEY, USER_LOGIN_INFO_KEY } from "../../js/constants.js";
+import { getValues, redirect } from "../../js/forms.js";
+import {
+  questions,
+  getStoredAnswers,
+  createElement,
+} from "../../js/questions.js";
 
 function createAnswer(answer, value) {
   return `
@@ -22,12 +18,6 @@ function createAnswer(answer, value) {
             <label for="answer-${value + 1}">${answer}</label>
           </div>
   `;
-}
-
-function getStoredAnswers() {
-  const existingAnswers = localStorage.getItem(ANSWERS_KEY) || "";
-
-  return existingAnswers.split(",").filter(Boolean);
 }
 
 function renderQuestion(index) {
@@ -66,8 +56,31 @@ function questionHandler(event) {
   data.push(answer);
 
   localStorage.setItem(ANSWERS_KEY, data);
+
+  if (data.length === questions.length) {
+    redirect("/pages/results/index.html");
+  }
+
   renderQuestion(data.length);
 }
+
+function guard() {
+  const data = localStorage.getItem(USER_LOGIN_INFO_KEY);
+
+  if (!data) {
+    redirect("/pages/login/index.html");
+
+    return;
+  }
+
+  const answers = getStoredAnswers();
+
+  if (answers.length === questions.length) {
+    redirect("/pages/results/index.html");
+  }
+}
+
+guard();
 
 const questionForm = document.getElementById("question-form");
 const data = getStoredAnswers();

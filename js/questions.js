@@ -1,5 +1,4 @@
 import { ANSWERS_KEY } from "./constants.js";
-import { getValues, redirect } from "./forms.js";
 
 export const questions = [
   {
@@ -37,28 +36,27 @@ export const questions = [
   },
 ];
 
-export function questionHandler(event) {
-  event.preventDefault();
+export const correctAnswers = questions.map(
+  ({ correctAnswer }) => correctAnswer
+);
 
-  const { answer } = getValues(event.target);
-
-  if (!answer) {
-    alert("Unesi odgovor prije nego nastavis!");
-
-    return;
-  }
-
+export function getStoredAnswers() {
   const existingAnswers = localStorage.getItem(ANSWERS_KEY) || "";
-  const data = existingAnswers.split(",").filter(Boolean);
 
-  data.push(answer);
+  return existingAnswers.split(",").filter(Boolean);
+}
 
-  console.log({ data, existingAnswers });
+export function createElement(html) {
+  const template = document.createElement("template");
 
-  localStorage.setItem(ANSWERS_KEY, data);
-  redirect(`/pages/question${data.length + 1}/index.html`);
+  template.innerHTML = html;
+
+  return template.content.cloneNode(true);
 }
 
 export default {
-  questionHandler,
+  questions,
+  correctAnswers,
+  getStoredAnswers,
+  createElement,
 };

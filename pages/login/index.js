@@ -30,6 +30,14 @@ function loginHandler(event) {
   }
 }
 
+function guard() {
+  const data = localStorage.getItem(USER_LOGIN_INFO_KEY);
+
+  if (data) {
+    redirect("/pages/questions/index.html");
+  }
+}
+
 /* Initialize validators */
 
 const formValidators = {
@@ -54,4 +62,5 @@ const formValidators = {
 
 const loginForm = document.getElementById("login-form");
 
-document.addEventListener("submit", loginHandler);
+loginForm.addEventListener("submit", loginHandler);
+guard();
